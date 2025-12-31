@@ -16,7 +16,7 @@
       --muted:#7a6b7a;
       --shadow: 0 8px 24px rgba(122,107,122,0.12);
     }
-    /* ✅ 背景图已换回粉色可爱风格 */
+    /* 背景图保持粉色猫咪风格 */
     html,body{height:100%;margin:0;font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;background:url('https://wallpaperaccess.com/full/1164977.jpg') center/cover no-repeat fixed;color:var(--text)}
     
     .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:20px;}
@@ -183,10 +183,10 @@
   </div>
 
   <script>
-    // ⚠️ 替换这里为你新发布的 Web App URL
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbyTVXvL-HU_kwjFalf-hwC7GssmVk9CZE1zwUVak3IDb-S2Fvbefb28Lf5VJDBzbgmQ/exec";
+    // ✅ 1. 更新为通用的 GAS 脚本链接
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbz6Cx8eX2guMerkXB-foaiHWeTn6qVCInPL6_HS6WFVl6Q_NZ2ijNAhMsonOsMBUiod3w/exec";
     
-    // ✅ 课文已更新为“猫咪版”
+    // 课文：一只可爱的猫
     const sentences = [
       "一只可爱的猫，坐在窗台上。",
       "它看着我画图画。",
@@ -307,6 +307,10 @@
       formData.append('name', googleUser.name);
       formData.append('email', googleUser.email);
       formData.append('class', currentClass);
+      
+      // ✅ 2. 指定作业名称，确保数据进入正确的 Sheet 页面
+      formData.append('exercise', '课文朗读-一只可爱的猫');
+
       formData.append('score', "完成");
       formData.append('total', sentences.length);
 
@@ -330,5 +334,4 @@
     };
   </script>
 </body>
-
 </html>
